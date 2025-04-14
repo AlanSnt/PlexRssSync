@@ -26,6 +26,6 @@ This Go application regularly checks Plex RSS feeds and, upon detecting changes,
 ### Docker
 
 ```bash
-docker build -t plex-rss-watcher .
-docker run -e PLEX_RSS_URLS="https://example.com/rss1,https://example.com/rss2" -e SONARR_URL="http://localhost:8989" -e SONARR_API_KEY="your-sonarr-api-key" -e RADARR_URL="http://localhost:7878" -e RADARR_API_KEY="your-radarr-api-key" plex-rss-watcher
+docker build -t plex-rss-sync .
+docker run -e PLEX_RSS_URLS="https://example.com/rss1,https://example.com/rss2" -e SONARR_URL="http://localhost:8989" -e SONARR_API_KEY="your-sonarr-api-key" -e RADARR_URL="http://localhost:7878" -e RADARR_API_KEY="your-radarr-api-key" plex-rss-sync
 ```
