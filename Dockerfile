@@ -8,6 +8,7 @@ COPY . .
 
 RUN go mod download \
     && CGO_ENABLED=0 GOOS=linux go build -ldflags "-s -w" -a -o plex-rss-sync . \
-    && chmod +x plex-rss-sync
+    && chmod +x plex-rss-sync \
+    && touch ./db/hash.db
 
 CMD ["./plex-rss-sync"]
