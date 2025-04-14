@@ -36,7 +36,10 @@ var (
 )
 
 func getImportLists(apiUrl, apiKey string) ([]ImportList, error) {
-	req, _ := http.NewRequest("GET", apiUrl+"/api/v3/importlist", nil)
+	req, err := http.NewRequest("GET", apiUrl+"/api/v3/importlist", nil)
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("X-Api-Key", apiKey)
 
 	resp, err := http.DefaultClient.Do(req)
